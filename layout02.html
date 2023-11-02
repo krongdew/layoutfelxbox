@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="layout02.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+          <i class="fa fa-bars"></i>
+        </a>
+    </div>
+    
+    
+    <div class="header">
+        
+            <div class="hearder-text" style="align-items: left;">
+            <ul class="horizontal-list">
+                <li>Home</li>
+                <li>start</li>
+            </ul>
+            </div>
+
+            
+            <div class="fakeimg">Image
+            </div>
+          
+            
+    </div>
+    
+    
+    <div class="flex-container">
+        <div class="content" style="background-color: #FA8072; padding: 10px;">
+            <p>Main Content</p>
+        </div>
+    </div>  
+      
+    <div class="footer" style="background-color: #FFA07A; padding: 10px;">
+        <p>Footer</p>
+    </div>
+      
+      <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+      </script>
+        
+</body>
+</html>

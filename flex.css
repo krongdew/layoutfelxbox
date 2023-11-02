@@ -1,0 +1,35 @@
+/* ก่อนที่เราจะสามารถใช้ความสามารถต่างๆ flexbox ได้ เราจะต้องสร้าง “flex container” ขึ้นมาก่อน โดยปกติแล้ว เวลาเราจะใช้ layout mode กับ elements ไหน เราก็จะต้องใส่ property “display” เอาไว้ที่ elements นั้นๆ แต่การใช้ flexbox จะเปลี่ยนไปตรงที่ เราจะต้องกำหนด property “display” เอาไว้ที่ element ที่เป็น container แทน */
+.flex-container{
+    display: flex;
+    /* Orientation : ลักษณะการปรับ*/
+    flex-direction: row; /* ค่า default จะเป็น row */
+    height: 100vh;
+}
+/* Sizing : กำหนดขนาดพื้นที่ของ flex items  ที่อยู่ใน  flex container */
+.content{
+    flex-grow: 8;
+    /* Ordering กำหนดลำดับของการแสดงผล */
+    order: 2;
+}
+.primary{
+    flex-grow: 2;
+    order: 1;
+}
+.secondary{
+    flex-grow: 1;
+    order: 3;
+}
+
+/* ตั้งแต่ viewport ขนาด 800px เป็นต้นไป flex items จะไหลไปตาม row หรือในแนวนอน */
+@media screen and (max-width:800px){
+    .flex-container{
+        flex-direction: column;
+    }
+   
+}
+.header{
+    height: 300px;
+}
+.footer{
+    height: 200px;
+}

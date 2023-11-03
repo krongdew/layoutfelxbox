@@ -35,12 +35,55 @@ body {
     display: flex;
     /* Orientation : ลักษณะการปรับ*/
     flex-direction: column; /* ค่า default จะเป็น row */
-    height: 100vh;
+    justify-content: flex-end; /* จัดให้ภายใน .header ไปชิดฝั่งขวา */
+    background-color: #ffffff;
+    padding: 10px;
 }
 
-.content{
-    height: 100vh;
+.content:nth-child(1){
+    height: 20vh;
+    margin: 0 auto; /* จัดตรงกลางทั้งแนวนอนและแนวตั้ง */
 }
+
+.flex-container-2 {
+  display: flex;
+  background-color: #ffffff;
+  height: 80vh; /* ความสูงเป็น 50% ของ viewport height */
+}
+
+.content-img-1,
+.content-img-2 {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+ 
+}
+
+.content-img-1 {
+  background-color: #ffffff;
+
+}
+
+.content-img-2 {
+  background-color: #FFEB3B;
+
+}
+
+.content-img-1 .fakeimg{
+  position: absolute; 
+  left: 5vw; 
+  width: 50vw; 
+  height: 30vw;
+}
+
+.content-img-2 .fakeimg{
+  width: 20vw; 
+  height: 20vw;
+}
+
+
 
 .row::after {
     content: "";
@@ -69,7 +112,7 @@ body {
     display: flex;
     flex-direction: column; /* เปลี่ยนเป็น layout แนวตั้ง */
     align-items: flex-start; /* จัดชิดซ้าย */
-    background-color: #CD5C5C;
+    background-color: #ffffff;
     padding: 10px;
 }
 
@@ -85,6 +128,8 @@ body {
     width: 90vw; /* ให้ความกว้างเป็น 50% ของ viewport width */
     max-width: 100%; /* ป้องกัน element ไม่ใหญ่เกินไปเมื่อ viewport มีขนาดเล็ก */
     max-height: 100%; /* ป้องกัน element ไม่สูงเกินไปเมื่อ viewport มีขนาดเล็ก */
+    position: relative;
+    z-index: 9;
 }
 .horizontal-list {
     list-style: none; /* ลบจุดข้างหน้า */
@@ -96,7 +141,8 @@ body {
 .horizontal-list li {
     margin-right: 10px; /* เพิ่มระยะห่างระหว่างรายการ */
 }  
-  
+
+
 .footer{
     height: 200px;
 } 
@@ -132,5 +178,102 @@ body {
         max-width: 100%; /* ป้องกัน element ไม่ใหญ่เกินไปเมื่อ viewport มีขนาดเล็ก */
         max-height: 100%; /* ป้องกัน element ไม่สูงเกินไปเมื่อ viewport มีขนาดเล็ก */
     }
+    .flex-container-2{
+      height: 30vh; /* ความสูงเป็น 50% ของ viewport height */
+      display: flex;
+    }
+    .content-img-1 .fakeimg{
+        
+        left:5vw; 
+        width: 40vw; 
+        height: 30vw;
+       
+    }
+    .content-img-2 .fakeimg{
+        width: 20vw; 
+        height: 20vw;
+    }  
+  }
+
+
+@media screen and (max-width: 1000px) {
+
+    .flex-container-2{
+      height: 30vh; /* ความสูงเป็น 50% ของ viewport height */
+      display: flex;
+    }
+    .content-img-1 .fakeimg{
+        
+        left:5vw; 
+        width: 40vw; 
+        height: 30vw;
+       
+    }
+    .content-img-2 .fakeimg{
+        width: 20vw; 
+        height: 20vw;
+    }  
   }
   
+/* .item1 { grid-area: bg; }
+.item2 { grid-area: pic; }
+.item3 { grid-area: bgw; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'bg bg bg bg bgw bgw bgw bgw bgw'
+    'bg pic pic bg pic pic bgw bgw bgw'
+    'bg pic pic bg pic pic bgw bgw bgw'
+    'bg bg bg bg bgw bgw bgw bgw bgw';
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+
+  
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+} */
+
+.item1 { grid-area: green; }
+.item2 { grid-area: white; }
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'green green green white white white '
+    'green green green white white white'
+    'green green green white white white ';
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 0px;
+  height: 60vw;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+.item2 .fakeimg{
+  position:absolute; 
+  right: 12vw; 
+}
+
+@media screen and (max-width: 1000px) {
+  .item1 .fakeimg{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .item2 .fakeimg{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+  }
+}

@@ -270,10 +270,18 @@ body {
   .item1 .fakeimg{
     display: flex;
     flex-wrap: wrap;
+    width: 40vw; 
+    height: 30vw;
   }
   .item2 .fakeimg{
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    width: 20vw; 
+    height: 20vw;
+    right: 5vw;
+  }
+  .grid-container{
+    height: 60vh;
   }
 }

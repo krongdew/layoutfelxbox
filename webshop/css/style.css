@@ -59,15 +59,11 @@ body {
     position: fixed;
     z-index: 999;
     transform: translateY(10%);
+    /* ในที่นี้, calc(100% - 30px) จะทำให้ความกว้างของ .topnav เท่ากับ 100% ของหน้าจอลบด้วย 30px ทางด้านขวา. คำนวณนี้จะทำให้ความกว้างของ .topnav ปรับตามขนาดหน้าจอและเว้นระยะข้างขวาไว้เสมอ. */
     width: calc(100% - 35px);
     box-sizing: border-box; /* เพิ่ม line นี้ */
    
 }
-
-
-    
-
-
 
 .logo:hover {
     background-color: transparent !important; /* ไม่มีการเปลี่ยนแปลงในพื้นหลัง */
@@ -93,7 +89,6 @@ body {
     background-color: rgba(255, 255, 255, 0.9); 
     border: 0px solid #ddd;
     padding: 10px;
-    
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     transform: translateX(100%);
@@ -108,6 +103,11 @@ body {
     display: block;   
     transform: translateX(0);
 }
+
+
+
+
+
 
 /* สไตล์ปุ่มปิด */
 .close-button {
@@ -155,8 +155,39 @@ body {
     padding: 0;
     
 }
+.headtext{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.text{
+    flex-grow: 3;
+    padding: 50px;
+    padding-left: 100px;
+    text-align: left;
+}
+.head-img {
+    flex-grow: 7;
+    width: 50%;
+    height: 50%;
+    padding-right: 100px;
+    animation: bounceUpDown 2s infinite alternate; /* 2s คือระยะเวลาทั้งหมด, infinite คือว่าจะทำซ้ำไปเรื่อยๆ, alternate คือการสลับทิศทาง */
+}
+
+@keyframes bounceUpDown {
+    0%, 100% {
+        transform: translateY(0); /* เริ่มต้นและจบที่ตำแหน่งเดิม */
+    }
+
+    50% {
+        transform: translateY(-20px); /* กลางครึ่งขยับขึ้น */
+    }
+}
 
 
+
+
+/* เนื้อหา */
 .flex-container{
     display: flex;
     /* Orientation : ลักษณะการปรับ*/
@@ -166,9 +197,19 @@ body {
     padding: 10px;
 }
 
-.content:nth-child(1){
-    height: 20vh;
+.hearder-text {
+    margin-bottom: 10px; /* มีช่องว่างด้านล่างเพื่อคั่นกัน */
+     /* จัดกลางตามแนวนอน */
+}
+
+.content{
+    height: 50vh;
     margin: 0 auto; /* จัดตรงกลางทั้งแนวนอนและแนวตั้ง */
+}
+.product{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
 
 
@@ -197,32 +238,6 @@ body {
   .col-12 {width: 100%;}
   
 
-
-.hearder-text {
-    margin-bottom: 10px; /* มีช่องว่างด้านล่างเพื่อคั่นกัน */
-     /* จัดกลางตามแนวนอน */
-}
-.fakeimg {
-    background-color: #aaa;
-    padding: 20px;
-    margin: 0 auto; /* จัดตรงกลางทั้งแนวนอนและแนวตั้ง */
-    height: 50vh; /* ให้ความสูงเป็น 50% ของ viewport height */
-    width: 90vw; /* ให้ความกว้างเป็น 50% ของ viewport width */
-    max-width: 100%; /* ป้องกัน element ไม่ใหญ่เกินไปเมื่อ viewport มีขนาดเล็ก */
-    max-height: 100%; /* ป้องกัน element ไม่สูงเกินไปเมื่อ viewport มีขนาดเล็ก */
-    position: relative;
-    z-index: 9;
-}
-.horizontal-list {
-    list-style: none; /* ลบจุดข้างหน้า */
-    display: flex; /* แสดงแบบ flex (แนวนอนเป็นค่า default) */
-    padding: 0; /* ลบระยะห่างของรายการ */
-    margin-left: 20px;
-}
-
-.horizontal-list li {
-    margin-right: 10px; /* เพิ่มระยะห่างระหว่างรายการ */
-}  
 
 
 .footer{
@@ -261,6 +276,29 @@ body {
         display: block;
         float: none;
         
+    }
+    
+    .headtext{
+        
+        flex-direction: column;
+    }
+    
+    .text{
+        order: 2;
+        flex-grow: 3;
+        padding: 50px;
+        padding-left: 100px;
+        text-align: left;
+    }
+    .head-img {
+        order: 1;
+        flex-grow: 7;
+        width: 50%;
+        height: 50%;
+        padding-right: 100px;
+        animation: bounceUpDown 2s infinite alternate; /* 2s คือระยะเวลาทั้งหมด, infinite คือว่าจะทำซ้ำไปเรื่อยๆ, alternate คือการสลับทิศทาง */
+        padding-left: 150px;
+        padding-top: 50px;
     }
      
 

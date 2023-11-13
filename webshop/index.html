@@ -78,16 +78,17 @@
 </script>
 
 <script>
-    var topnav = document.getElementById("myTopnav");
-    var topnavOffset = topnav.offsetTop;
+   var topnav = document.getElementById("myTopnav");
+var topnavOffset = topnav.offsetTop;
 
-    window.onscroll = function() {
-        if (window.pageYOffset > topnavOffset) {
-            topnav.classList.add("sticky");
-        } else {
-            topnav.classList.remove("sticky");
-        }
-    };
+window.onscroll = function() {
+    if (window.pageYOffset > topnavOffset) {
+        topnav.classList.add("sticky", "show");
+    } else {
+        topnav.classList.remove("sticky", "show");
+    }
+};
+
 </script>
 
 <script>

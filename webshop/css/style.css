@@ -188,27 +188,23 @@ body {
 
 
 /* เนื้อหา */
-.flex-container{
+
+.flex-container {
     display: flex;
-    /* Orientation : ลักษณะการปรับ*/
-    flex-direction: column; /* ค่า default จะเป็น row */
-    justify-content: flex-end; /* จัดให้ภายใน .header ไปชิดฝั่งขวา */
+    flex-direction: row;
+    justify-content: space-between; /* จัดให้รูปและปุ่มอยู่ในส่วนซ้ายและขวาของ .flex-container */
     background-color: #ffffff;
     padding: 10px;
 }
 
-.hearder-text {
-    margin-bottom: 10px; /* มีช่องว่างด้านล่างเพื่อคั่นกัน */
-     /* จัดกลางตามแนวนอน */
-}
-
-.content{
+.content {
+    display: flex;
+    flex-direction: row;
     height: 50vh;
     margin: 0 auto; /* จัดตรงกลางทั้งแนวนอนและแนวตั้ง */
 }
-.product{
-    display: flex;
-    flex-direction: column;
+
+.product {
     text-align: center;
 }
 

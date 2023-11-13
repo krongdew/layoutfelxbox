@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://kit.fontawesome.com/c3a1442973.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="logo"><b><i class="fa-brands fa-apple fa-xl"></i></b></a>
+        <div class="topnav-right">
+          <a href="#contact">Home</a>
+          <a href="#contact">Product</a>
+          <a href="#about">Contact us</a>
+          <a href="#news">Register / Log in</a>
+        
+        <!-- เพิ่มลิงค์สำหรับตระกร้า -->
+        <a href="javascript:void(0);" id="cart-icon" onclick="toggleCart()">
+            <i class="fa-solid fa-shopping-cart"></i> Cart <span id="cart-count">0</span>
+        </a>
+        
+        <div id="cart-content" class="cart-content">
+            <div class="cart-head"> <h2>ตระกร้าสินค้า</h2> 
+            <button class="close-button" onclick="closeCart()">X</button>
+            </div>
+            <br>
+            <!-- รายการสินค้าจะปรากฏ -->
+            <div id="cart-items"></div>
+            <button class="p-button" onclick="placeOrder()">สั่งซื้อ</button>
+           
+        </div>
+        
+        </div>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa-solid fa-bars"></i>
+        </a>
+      </div>
+    </div>
+    
+    <!-- <div class="header">
+            <div class="bg-img">
+                test
+            </div>
+            
+    </div> -->
+    
+    
+    <div class="flex-container">
+        <div class="content">
+            margin: 0 auto; /* จัดตรงกลางทั้งแนวนอนและแนวตั้ง */
+              <!-- เพิ่มลิงค์สำหรับเรียกใช้ฟังก์ชัน addToCart -->
+        <a href="javascript:void(0);" onclick="addToCart('Product 1')">Add to Cart</a>
+        <a href="javascript:void(0);" onclick="addToCart('Product 2')">Add to Cart</a>
+        </div>
+    </div>  
+    
+
+    
+    
+       
+      
+    <div class="footer" style="background-color: #FFA07A; padding: 10px;">
+        <p>Footer</p>
+    </div>
+      
+<script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+</script>
+
+<script>
+    var topnav = document.getElementById("myTopnav");
+    var topnavOffset = topnav.offsetTop;
+
+    window.onscroll = function() {
+        if (window.pageYOffset > topnavOffset) {
+            topnav.classList.add("sticky");
+        } else {
+            topnav.classList.remove("sticky");
+        }
+    };
+</script>
+
+<script>
+    var cartItems = [];
+
+function addToCart(item) {
+    cartItems.push(item);
+    updateCartCount();
+    updateCartContent();
+}
+
+function updateCartContent() {
+    var cartItemsContainer = document.getElementById("cart-items");
+    cartItemsContainer.innerHTML = ""; // เคลียร์เนื้อหาตระกร้า
+
+    cartItems.forEach(function (item) {
+        var cartItem = document.createElement("div");
+        cartItem.innerHTML = item;
+        cartItemsContainer.appendChild(cartItem);
+    });
+
+    // แสดงหรือซ่อนเนื้อหาตระกร้า
+    var cartContent = document.getElementById("cart-content");
+    cartContent.classList.add("show-cart");
+}
+
+function updateCartCount() {
+    var cartCount = document.getElementById("cart-count");
+    cartCount.innerHTML = cartItems.length;
+}
+
+function toggleCart() {
+    var cartContent = document.getElementById("cart-content");
+    // แสดงหรือซ่อนเนื้อหาตระกร้า
+    cartContent.classList.toggle("show-cart");
+}
+
+function closeCart() {
+    var cartContent = document.getElementById("cart-content");
+    cartContent.classList.remove("show-cart");
+}
+
+function placeOrder() {
+    // ตรวจสอบว่ามีสินค้าในตระกร้าหรือไม่
+    if (cartItems.length > 0) {
+        // ทำการสั่งซื้อ (เพิ่มโค้ดต่อไปนี้ตามต้องการ)
+        alert("สั่งซื้อสำเร็จ!");
+        // ล้างตะกร้าหลังจากการสั่งซื้อ
+        cartItems = [];
+        updateCartCount();
+        updateCartContent();
+    } else {
+        alert("ตระกร้าสินค้าว่างเปล่า");
+    }
+}
+
+    
+    
+</script>
+
+      
+  
+  
+</body>
+</html>

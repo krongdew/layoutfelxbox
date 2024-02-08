@@ -8,8 +8,9 @@
     <script src="https://kit.fontawesome.com/c3a1442973.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <video src='./img/video-1.mp4' autoPlay loop muted></video>
     <div class="header">
-    <div class="topnav" id="myTopnav">
+        <div class="topnav" id="myTopnav">
         <a href="#home" class="logo"><b><i class="fa-brands fa-apple fa-xl"></i></b></a>
         <div class="topnav-right">
           <a href="#contact">Home</a>
@@ -21,18 +22,14 @@
         <a href="javascript:void(0);" id="cart-icon" onclick="toggleCart()">
             <i class="fa-solid fa-shopping-cart"></i> Cart <span id="cart-count">0</span>
         </a>
-        
-       
-        
+    
         </div>
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
         <i class="fa-solid fa-bars"></i>
-        </a>
-        
-        
-      </div>
+        </a>  
+        </div>
       
-      <div id="cart-content" class="cart-content">
+        <div id="cart-content" class="cart-content">
         <div class="cart-head"> <h2>Cart</h2> 
         <button class="close-button" onclick="closeCart()">X</button>
         </div>
@@ -40,24 +37,31 @@
         <!-- รายการสินค้าจะปรากฏ -->
         <div id="cart-items"></div>
         <button class="p-button" onclick="placeOrder()">Checkout</button>
-       
-    </div>
-    
-      <div class="head-content">
-        <div class="headtext">
-            <div class="text">
-                <h1>Welcome, to my Webshop</h1>
-                <p style="text-align: left;">Discover a world of possibilities with our online notebook store! Elevate your productivity and style with the latest and greatest laptops at your fingertips. shop with us!</p>
-                <button class="p-button">Register</button>
-            </div>
-            <img class="head-img" src="./img/notebook.png">
         </div>
-      </div>
+        
+        <div class="head-content">
+            <div class="headtext">
+                <div class="text">
+                <h1 class="textsize">Welcome, to my Webshop</h1>
+                <p style="text-align: left;">Discover a world of possibilities with our online notebook store! Elevate your productivity and style with the latest and greatest laptops at your fingertips. shop with us!</p>
+                <button class="btn--outline"><i class="fa-solid fa-registered"></i> Register</button>
+                <button class="btn--primary"><i class="fa-solid fa-shop"></i> Shop</button>
+            </div>
+                <img class="head-img" src="./img/notebook.png">
+            </div> 
+        </div>
+        
+    </div>
+    
+    <div class="headtext" style="padding-left: 100px; background-color: #000000; color: white;">    
+        <h1 class="textsize">Our Product</h1>
+       <br>
     </div>
     
     
-    <div class="flex-container">
+        
         <div class="content">
+            
             <div class="product">
                 <img src="./img/notebook.png" width="150px">
                 <p><h5>Product 1</h5></p>
@@ -75,16 +79,150 @@
                     <button class="p-button">Add to Cart</button>
                 </a>  
             </div>
+            
+            <div class="product">
+                <img src="./img/notebook.png" width="150px">
+                <p><h5>Product 3</h5></p>
+                <!-- เพิ่มลิงค์สำหรับเรียกใช้ฟังก์ชัน addToCart -->   
+                <a href="javascript:void(0);" onclick="addToCart('Product 3')">
+                    <button class="p-button">Add to Cart</button>
+                </a>  
+            </div>
+            
+            <div class="product">
+                <img src="./img/notebook.png" width="150px">
+                <p><h5>Product 4</h5></p>
+                <!-- เพิ่มลิงค์สำหรับเรียกใช้ฟังก์ชัน addToCart -->   
+                <a href="javascript:void(0);" onclick="addToCart('Product 4')">
+                    <button class="p-button">Add to Cart</button>
+                </a>  
+            </div>
+            <div class="product">
+                <img src="./img/notebook.png" width="150px">
+                <p><h5>Product 4</h5></p>
+                <!-- เพิ่มลิงค์สำหรับเรียกใช้ฟังก์ชัน addToCart -->   
+                <a href="javascript:void(0);" onclick="addToCart('Product 4')">
+                    <button class="p-button">Add to Cart</button>
+                </a>  
+            </div>
+            <div class="product">
+                <img src="./img/notebook.png" width="150px">
+                <p><h5>Product 4</h5></p>
+                <!-- เพิ่มลิงค์สำหรับเรียกใช้ฟังก์ชัน addToCart -->   
+                <a href="javascript:void(0);" onclick="addToCart('Product 4')">
+                    <button class="p-button">Add to Cart</button>
+                </a>  
+            </div>
+            <div class="product">
+                <img src="./img/notebook.png" width="150px">
+                <p><h5>Product 4</h5></p>
+                <!-- เพิ่มลิงค์สำหรับเรียกใช้ฟังก์ชัน addToCart -->   
+                <a href="javascript:void(0);" onclick="addToCart('Product 4')">
+                    <button class="p-button">Add to Cart</button>
+                </a>  
+            </div>
+            <div class="product">
+                <img src="./img/notebook.png" width="150px">
+                <p><h5>Product 4</h5></p>
+                <!-- เพิ่มลิงค์สำหรับเรียกใช้ฟังก์ชัน addToCart -->   
+                <a href="javascript:void(0);" onclick="addToCart('Product 4')">
+                    <button class="p-button">Add to Cart</button>
+                </a>  
+            </div>
+            <div class="product">
+                <img src="./img/notebook.png" width="150px">
+                <p><h5>Product 4</h5></p>
+                <!-- เพิ่มลิงค์สำหรับเรียกใช้ฟังก์ชัน addToCart -->   
+                <a href="javascript:void(0);" onclick="addToCart('Product 4')">
+                    <button class="p-button">Add to Cart</button>
+                </a>  
+            </div>
+            <div class="product">
+                <img src="./img/notebook.png" width="150px">
+                <p><h5>Product 4</h5></p>
+                <!-- เพิ่มลิงค์สำหรับเรียกใช้ฟังก์ชัน addToCart -->   
+                <a href="javascript:void(0);" onclick="addToCart('Product 4')">
+                    <button class="p-button">Add to Cart</button>
+                </a>  
+            </div>
+            <div class="product">
+                <img src="./img/notebook.png" width="150px">
+                <p><h5>Product 4</h5></p>
+                <!-- เพิ่มลิงค์สำหรับเรียกใช้ฟังก์ชัน addToCart -->   
+                <a href="javascript:void(0);" onclick="addToCart('Product 4')">
+                    <button class="p-button">Add to Cart</button>
+                </a>  
+            </div>
+            <div class="product">
+                <img src="./img/notebook.png" width="150px">
+                <p><h5>Product 4</h5></p>
+                <!-- เพิ่มลิงค์สำหรับเรียกใช้ฟังก์ชัน addToCart -->   
+                <a href="javascript:void(0);" onclick="addToCart('Product 4')">
+                    <button class="p-button">Add to Cart</button>
+                </a>  
+            </div>
+            
         </div>
+        
+    
+    
+    <!-- <div class="content">
+    <div class="row">
+        <div class="col-12" style="background-color: grey;">TEST-12</div>
+        <div class="col-11" style="background-color: grey;">TEST-11</div>
+        <div class="col-10" style="background-color: grey;">TEST-10</div>
+        <div class="col-9" style="background-color: grey;">TEST-9</div>
+        <div class="col-8" style="background-color: grey;">TEST-8</div>
+        <div class="col-7" style="background-color: grey;">TEST-7</div>
+        <div class="col-6" style="background-color: grey;">TEST-6</div>
+        <div class="col-5" style="background-color: grey;">TEST-5</div>
+        <div class="col-4" style="background-color: grey;">TEST-4</div>
+        <div class="col-3" style="background-color: grey;">TEST-3</div>
+        <div class="col-2" style="background-color: grey;">TEST-2</div>
+        <div class="col-1" style="background-color: grey;">TEST-1</div>
+    </div>
+    <div class="row">
+        <div class="col-3" style="background-color: grey;">TEST-3</div>
+        <div class="col-3" style="background-color: grey;">TEST-3</div>
+        <div class="col-3" style="background-color: grey;">TEST-3</div>
+    </div>
+    <div class="row">
+        <div class="col-12" style="background-color: grey;">TEST-12</div>
+        <div class="col-12" style="background-color: grey;">TEST-12</div>
+        <div class="col-12" style="background-color: grey;">TEST-12</div>
+    </div>
+    <div class="row">
+        <div class="col-5" style="background-color: grey;">TEST-5</div>
+        <div class="col-5" style="background-color: grey;">TEST-5</div>
+        <div class="col-5" style="background-color: grey;">TEST-5</div>
+    </div>
+    <div class="row">
+        <div class="col-4" style="background-color: grey;">TEST-4</div>
+        <div class="col-4" style="background-color: grey;">TEST-4</div>
+        <div class="col-4" style="background-color: grey;">TEST-4</div>
     </div>
     
-
-    
+    </div> -->
     
        
       
-    <div class="footer" style="background-color: #000000; padding: 10px; color: white;">
-        <p>Footer</p>
+    <div class="footer" style="background-color: #000000;  color: white;">
+        <div class="footer-item">
+            <h3>Footer Section 1</h3>
+            <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div class="footer-item">
+            <h3>Section 2</h3>
+            <p>Consectetur adipiscing elit.</p>
+        </div>
+        <div class="footer-item">
+            <h3>Section 3</h3>
+            <p>Sed do eiusmod tempor incididunt.</p>
+        </div>
+        <div class="footer-item">
+            <h3>Section 4</h3>
+            <p>Ut labore et dolore magna aliqua.</p>
+        </div>
     </div>
       
 <script>

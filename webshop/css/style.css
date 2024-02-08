@@ -1,12 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@500&display=swap');
+:root {
+    --primary: #fff;
+  }
 body {
     margin: 0;
     padding: 0;
     font-family: 'IBM Plex Sans Thai', sans-serif;
     
   }
+  
+video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+  }
+   
 .header {
-    background-image: url("../img/bg.png");
+    /* background-image: url("../img/bg.png"); */
     background-repeat: no-repeat;
     width: auto;
     height: 800px;
@@ -15,13 +27,14 @@ body {
     padding-top: 15px;
     padding-right: 35px;
     top:0;
-  
+    
+    align-items: stretch; /* ทำให้พื้นหลังยืดตามสูงของ content */
 }
 
 .topnav {
     overflow: hidden;
     /* ทำให้เนื้อหาที่เกินขอบเขตของ element นั้นๆ ถูกซ่อนไว้และไม่แสดงผลออกมาที่ส่วนที่กำหนดไว้  */
-    background-color: #333;
+    background-color: #000000;
     border-radius: 40px;
     margin-left: 20px;
     margin-right: 20px;
@@ -29,7 +42,7 @@ body {
     padding: 10px;
     /* เพิ่มเงา */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease-in-out; /* เพิ่ม transition ให้กับ transform property */
+    transition: transform 0.1s ease-in-out; /* เพิ่ม transition ให้กับ transform property */
     width: 100%;
     box-sizing: border-box; /* เพิ่ม line นี้ */
   }
@@ -58,7 +71,7 @@ body {
 .topnav.sticky {
     position: fixed;
     z-index: 999;
-    transform: translateY(10%);
+    transform: translateY(30%);
     /* ในที่นี้, calc(100% - 30px) จะทำให้ความกว้างของ .topnav เท่ากับ 100% ของหน้าจอลบด้วย 30px ทางด้านขวา. คำนวณนี้จะทำให้ความกว้างของ .topnav ปรับตามขนาดหน้าจอและเว้นระยะข้างขวาไว้เสมอ. */
     width: calc(100% - 35px);
     box-sizing: border-box; /* เพิ่ม line นี้ */
@@ -92,7 +105,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     transform: translateX(100%);
-    transition: transform 0.3s ease-in-out; /* เพิ่ม transition ให้กับ transform property */
+    transition: transform 0.5s ease-in-out; /* เพิ่ม transition ให้กับ transform property */
     z-index: 1000;
     
     
@@ -159,20 +172,60 @@ body {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+   
 }
 .text{
     flex-grow: 3;
     padding: 50px;
     padding-left: 100px;
     text-align: left;
+    color: white;
+}
+.textsize{
+    font-size: 50px;
 }
 .head-img {
+    margin-top: auto;
+    padding: 50px;
     flex-grow: 7;
-    width: 50%;
-    height: 50%;
-    padding-right: 100px;
+    width: calc(100%/2 - 1px - 2*50px);
+    height: calc(50% - 35px);
     animation: bounceUpDown 2s infinite alternate; /* 2s คือระยะเวลาทั้งหมด, infinite คือว่าจะทำซ้ำไปเรื่อยๆ, alternate คือการสลับทิศทาง */
+    box-sizing: border-box; /* เพิ่ม line นี้ */
 }
+.btn--primary {
+    background-color: var(--primary);
+    color: #242424;
+    border: 1px solid var(--primary);
+    padding: 8px 20px;
+    border-radius: 25px;
+    
+  }
+  .btn--primary:hover {
+    background-color: var(--primary);
+    color: #242424;
+    border: 1px solid var(--primary);
+    padding: 8px 20px;
+    animation: bounceUpDownbutton 0.5s alternate;
+  }
+  
+  .btn--outline {
+    background-color: transparent;
+    color: #fff;
+    padding: 8px 20px;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease-out;
+    border-radius: 25px;
+  }
+  
+  .btn--outline:hover {
+    background-color: var(--primary);
+    color: #000000;
+    padding: 8px 20px;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease-out;
+    animation: bounceUpDownbutton 0.5s alternate; /* 2s คือระยะเวลาทั้งหมด, infinite คือว่าจะทำซ้ำไปเรื่อยๆ, alternate คือการสลับทิศทาง */
+  }
 
 @keyframes bounceUpDown {
     0%, 100% {
@@ -184,28 +237,48 @@ body {
     }
 }
 
+@keyframes bounceUpDownbutton {
+    0%, 100% {
+        transform: translateY(0); /* เริ่มต้นและจบที่ตำแหน่งเดิม */
+    }
+
+    50% {
+        transform: translateY(-5px); /* กลางครึ่งขยับขึ้น */
+    }
+}
+
 
 
 
 /* เนื้อหา */
 
-.flex-container {
+/* .flex-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between; /* จัดให้รูปและปุ่มอยู่ในส่วนซ้ายและขวาของ .flex-container */
-    background-color: #ffffff;
-    padding: 10px;
-}
+    /* padding: 10px; */
+    
+/*} */
 
 .content {
     display: flex;
     flex-direction: row;
-    height: 50vh;
+    height: 100%;
     margin: 0 auto; /* จัดตรงกลางทั้งแนวนอนและแนวตั้ง */
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    padding-left: 150px;
+    padding-right: 100px;
+    
 }
 
 .product {
     text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px;
 }
 
 
@@ -240,6 +313,18 @@ body {
     height: 200px;
 } 
 
+.footer {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.footer-item {
+    padding: 10px;
+}
+
 
 @media screen and (max-width: 600px) {
     .topnav a:not(:first-child) {display: none;}
@@ -251,6 +336,7 @@ body {
     .topnav .topnav-right{
       display: none;  
     }
+   
 }
     
   
@@ -271,8 +357,15 @@ body {
     .topnav.responsive .topnav-right{
         display: block;
         float: none;
-        
+        position: fixed;
+        background-color: #333;
+        width: 85%;
+        border-radius: 40px;
+        top:100px;
+        left: 30px;
+        z-index: 98;
     }
+    
     
     .headtext{
         
@@ -280,139 +373,40 @@ body {
     }
     
     .text{
-        order: 2;
+        order: 1;
         flex-grow: 3;
         padding: 50px;
         padding-left: 100px;
         text-align: left;
     }
     .head-img {
-        order: 1;
+        order: 2;
         flex-grow: 7;
-        width: 50%;
+        width: 100%;
         height: 50%;
         padding-right: 100px;
         animation: bounceUpDown 2s infinite alternate; /* 2s คือระยะเวลาทั้งหมด, infinite คือว่าจะทำซ้ำไปเรื่อยๆ, alternate คือการสลับทิศทาง */
-        padding-left: 150px;
-        padding-top: 50px;
+        padding-left: 90px;
+        padding-top: 20px;
+        margin-top: auto;
     }
-     
-
-  
-    .fakeimg {
-        margin-top: 5px;
-        background-color: #aaa;
-        padding: 20px;
-        margin-bottom: 30px;
-        height: 50vh; /* ให้ความสูงเป็น 50% ของ viewport height */
-        width: 70vw; /* ให้ความกว้างเป็น 50% ของ viewport width */
-        max-width: 100%; /* ป้องกัน element ไม่ใหญ่เกินไปเมื่อ viewport มีขนาดเล็ก */
-        max-height: 100%; /* ป้องกัน element ไม่สูงเกินไปเมื่อ viewport มีขนาดเล็ก */
+    .textsize{
+      font-size: 30px;
     }
-    .flex-container-2{
-      height: 30vh; /* ความสูงเป็น 50% ของ viewport height */
-      display: flex;
-    }
-    .content-img-1 .fakeimg{
+    .content {
+        padding-left: 80px;
+        padding-right: 50px;
+        height: 100%;
         
-        left:5vw; 
-        width: 40vw; 
-        height: 30vw;
-       
     }
-    .content-img-2 .fakeimg{
-        width: 20vw; 
-        height: 20vw;
-    }  
+   
+
   }
-
-
-@media screen and (max-width: 1000px) {
-
-    .flex-container-2{
-      height: 30vh; /* ความสูงเป็น 50% ของ viewport height */
-      display: flex;
-    }
-    .content-img-1 .fakeimg{
-        
-        left:5vw; 
-        width: 40vw; 
-        height: 30vw;
-       
-    }
-    .content-img-2 .fakeimg{
-        width: 20vw; 
-        height: 20vw;
-    }  
+  @media screen and (max-width: 1000px) {
+    .head-img {
+      margin-top: auto;
+      width: 100%;
   }
   
-/* .item1 { grid-area: bg; }
-.item2 { grid-area: pic; }
-.item3 { grid-area: bgw; }
-
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'bg bg bg bg bgw bgw bgw bgw bgw'
-    'bg pic pic bg pic pic bgw bgw bgw'
-    'bg pic pic bg pic pic bgw bgw bgw'
-    'bg bg bg bg bgw bgw bgw bgw bgw';
-  gap: 10px;
-  background-color: #2196F3;
-  padding: 10px;
 }
 
-  
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-} */
-
-.item1 { grid-area: green; }
-.item2 { grid-area: white; }
-
-
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'green green green white white white '
-    'green green green white white white'
-    'green green green white white white ';
-  gap: 10px;
-  background-color: #ffffff;
-  padding: 0px;
-  height: 60vw;
-}
-
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
-}
-.item2 .fakeimg{
-  position:absolute; 
-  right: 12vw; 
-}
-
-@media screen and (max-width: 1000px) {
-  .item1 .fakeimg{
-    display: flex;
-    flex-wrap: wrap;
-    width: 40vw; 
-    height: 30vw;
-  }
-  .item2 .fakeimg{
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    width: 20vw; 
-    height: 20vw;
-    right: 5vw;
-  }
-  .grid-container{
-    height: 60vh;
-  }
-}
